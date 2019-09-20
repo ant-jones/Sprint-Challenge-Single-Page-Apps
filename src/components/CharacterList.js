@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Container, Row} from 'reactstrap';
+import CharacterCard from "./CharacterCard";
 
-export default function CharacterList() {
+export default function CharacterList(props) {
   // TODO: Add useState to track data from useEffect
   const [char, setChar] = useState([])
   useEffect(() => {
@@ -24,20 +25,16 @@ export default function CharacterList() {
       <Row>
       {/* <h2>TODO: `char.map()` over your state here!</h2> */}
     
-    {char.map(person => {
+        {char.map(person => {
 
-      return(
-        <div key={person.id}>
-          <h2>Name: {person.name}</h2>
-        
-          <p>Status: {person.status}</p>
-        
-          <p>Species: {person.species}</p>
-        
-          <p>Gender: {person.gender}</p>
-        </div>
-      )
-    })}
+          return(
+            <CharacterCard
+            name = {person.name}
+            status ={person.status}
+            species = {person.species}
+            gender = {person.gender} />
+          )
+        })}
     </Row>
   </Container> 
  );

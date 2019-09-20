@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Col } from 'reactstrap';
 
+
 const Card = styled.div`
 background-color: lightgrey;
 color: black;
@@ -18,14 +19,19 @@ export default function CharacterCard(props) {
 
 
   return (
-    <Col xs="6" sm="4" key = {props.id}>
+    <Col xs="6" sm="4">
       
       <Card>
+      <div key={props.id}>
+              <h2>Name: {props.name}</h2>
+            
+              <p>Status: {props.status}</p>
+            
+              <p>Species: {props.species}</p>
+            
+              <p>Gender: {props.gender}</p>
+            </div>
           
-          <h2>My name is {props.name}</h2>
-          
-          <h5> {props.gender}, I was born in {props.birthday}, I have {props.eyes} eyes</h5>
-           
       </Card>
       
     </Col>
