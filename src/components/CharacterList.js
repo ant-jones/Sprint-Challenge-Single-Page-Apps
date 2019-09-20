@@ -21,21 +21,25 @@ export default function CharacterList(props) {
   }, []);
 
   return (
-    <Container className="character-list">
-      <Row>
+     <Container className="character-list">
+       <Row>
       {/* <h2>TODO: `char.map()` over your state here!</h2> */}
-    
-        {char.map(person => {
+      
+        {char.map((person, index) => {
 
           return(
-            <CharacterCard
-            name = {person.name}
-            status ={person.status}
-            species = {person.species}
-            gender = {person.gender} />
+            <div>           
+              <CharacterCard key={index}
+              name = {person.name}
+              status ={person.status}
+              species = {person.species}
+              gender = {person.gender}
+            />
+            </div>
           )
         })}
+
     </Row>
-  </Container> 
+  </Container>  
  );
 }

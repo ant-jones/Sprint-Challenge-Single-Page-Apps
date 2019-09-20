@@ -16,8 +16,7 @@ export default function App() {
     <main>
       
       <Header />
-      <WelcomePage />
-      <CharacterList charProps={char}/>
+      <CharacterList char={char}/>
       <CharacterCard />
       <SearchForm addNewCharProps={addNewChar}/>
       <Route path="/" component={WelcomePage} />

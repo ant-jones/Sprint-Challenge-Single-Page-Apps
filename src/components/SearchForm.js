@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+
 export default function SearchForm(props) {
   const [newChar, setNewChar] = useState({})
 
@@ -16,6 +17,7 @@ export default function SearchForm(props) {
  
   return (
     <section className="search-form">
+      
      <form onSubmit = {handleSubmit}>
             <label>
                 Name:
